@@ -1,17 +1,30 @@
-<h1 class = "text-primary text-center">App component</h1>
+<h1 class="text-primary text-center"> App Component </h1>
+
 
 <ul>
-    <li>
-        <a routerLink="/home">Home</a>
+  <li>
+      <a routerLink = "" >App</a> 
     </li>
     <li>
-        <a routerLink="/home/child">Child</a>
-    </li>
-    <li>
-        <a routerLink="/about">About</a>
-    </li>
+        <a routerLink = "/home" [queryParams] ="sampleMessage">Home</a>
+  </li>
+  <li>
+      <a routerLink = "/home/dashboard">Dashboard</a>
+  </li>
+  <li>
+        <a [routerLink] ="['/about', 5, 10]"> About</a>
+  </li>
+
 </ul>
 
+<button (click) = "goToHome()">
+    Go to Home
+</button>
 <router-outlet>
-
 </router-outlet>
+
+
+<!-- 3 way to pass data
+queryparams is called property binding
+route parameters
+routestate parameter -->

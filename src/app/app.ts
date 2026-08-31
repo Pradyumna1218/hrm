@@ -1,5 +1,5 @@
-import { Component  } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { Component, inject  } from '@angular/core';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
 
 
 @Component({
@@ -8,12 +8,24 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   styleUrl: './app.scss',
   templateUrl: './app.html',
 })
+
 export class App {
   
+  private router = inject(Router);
+
+  sampleMessage: SampleMessage = {
+    message: 'Message',
+    location: 'Location'
+  }
+
+  goToHome(): void{
+    this.router.navigate(['/home'],{
+    state: {data: this.sampleMessage}
+  }); 
+  }
 }
 
-
-
-// One way Binding
-
-// Two way Binding
+export interface sampleMessage{
+  message: string,
+  location: string
+}

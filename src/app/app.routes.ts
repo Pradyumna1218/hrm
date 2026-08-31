@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 
+
 export const routes: Routes = [
     {
         path: 'home',
@@ -10,8 +11,10 @@ export const routes: Routes = [
         loadChildren: () => import('./home/dashboard/home.app.routes').then(m => m.routes)
     },
     {
-        path: 'about',
+        path: 'about/:msg/:loc',
+        // loadComponent:() => import('./about/about').then(m => m.About)
         // component: About this is not lazy loading
+
         loadComponent:() => import('./about/about').then(m => m.About)
     }
 ];
