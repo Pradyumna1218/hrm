@@ -1,16 +1,11 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-home',
-  styleUrl: './home.scss',
+  imports: [RouterOutlet],
   templateUrl: './home.html',
+  styleUrl: './home.scss'
 })
 export class Home {
-  @Input() parentValue: boolean = false;
-  @Output() childEvent = new EventEmitter<string>;
-
-  btnClicked(){
-    this.childEvent.emit("Child message")
-  }
 }

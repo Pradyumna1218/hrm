@@ -1,36 +1,17 @@
-<h1 class="text-primary text-center">{{ header }}</h1>
-<br>
+<h1 class = "text-primary text-center">App component</h1>
 
-<div class="container">
-    <!-- One way binding -->
-    <!-- String Interpolation -->
-    <span>{{ secondTitle }}</span>
-    <hr>
-    <!-- One way binding -->
-    <input type="checkbox" id="TestCheckbox" [(checked)]="isChecked">
-    <label for="TestCheckbox">First Checkbox</label>
-    <br>
-    <!-- Two way binding -->
-    <input type="checkbox" id="TestCheckbox2" #xyz [(ngModel)]="isChecked">
-    <label for="TestCheckbox2">Second Checkbox</label>
-    <br>
-    <!-- Two way binding -- Template Referencing-->
-    <!-- <input type="checkbox" id="TestCheckbox2" #TestCheckboxTemp 
-    (change)="changeCheckbox(TestCheckboxTemp.checked)"> -->
-    <label for="TestCheckbox2">Second Checkbox</label>
-    <br>
-    {{ isChecked }}
-    <br>
+<ul>
+    <li>
+        <a routerLink="/home">Home</a>
+    </li>
+    <li>
+        <a routerLink="/home/child">Child</a>
+    </li>
+    <li>
+        <a routerLink="/about">About</a>
+    </li>
+</ul>
 
-    <input type="text" [value] = "isChecked" (input) = "changeCheckbox()">
-</div>
+<router-outlet>
 
-<div class="container">
-    <app-home [parentValue]="isChecked" 
-    (childEvent)="handleChildEvent($event)"
-    >
-        
-    </app-home>
-</div>
-
-<p class = "text-center"> End of line </p>
+</router-outlet>
