@@ -10,30 +10,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './home.html',
 })
 export class Home {
-  username: string = '';
-  password: string = '';
   
-  userReactiveForm: FormGroup = new FormGroup({
-    username: new FormControl<string>('', [Validators.required, Validators.minLength(5)]),
-    password: new FormControl<string>('', [Validators.required, Validators.minLength(8)]),
-    confirmPassword: new FormControl<string>('')
-  });
-
-  onSubmit(): void{
-    //do anything with your logic
-    console.log(this.username);
-    console.log(this.password)
-  }
-
-  onSubmitTemplate(formData: NgForm): void{
-    console.log(formData);
-  }
-
-  onSubmitReactive(): void{
-    if(this.userReactiveForm.invalid){
-      console.log("Invalid");
-      return;
-    }
-    console.log(this.userReactiveForm.value)
-  }
 }

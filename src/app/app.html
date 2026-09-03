@@ -1,14 +1,33 @@
-<h1 class="text-center text-primary">App Component</h1>
+<h1 class="text-center">
+    Human Resource Management
+</h1>
 
-<ul>
-    <li><a routerLink="">App</a></li>
-    <li><a routerLink="/home">Home</a></li>
-    <ul>
-        <li>
-            <a routerLink="/home/dashboard">Home Child</a>
-        </li>
-    </ul>
-    <li><a routerLink="/about">About</a></li>
-</ul>
+<nav class="navbar navbar-expand bg-info p-2">
 
-<router-outlet></router-outlet>
+    <div class="container">
+
+        <a routerLink="/home/dashboard" class="nav-link text-white">
+            Dashboard
+        </a>
+
+        <a routerLink="/contact" class="nav-link text-white">
+            Contact
+        </a>
+
+        <a routerLink="/login" class="nav-link text-white">
+            Log In
+        </a>
+
+    </div>
+
+</nav>
+
+<br>
+
+<div class="mb-6">
+    <router-outlet></router-outlet>
+</div>
+
+<footer class="container w-75 bg-secondary text-white text-center p-2 mt-5">
+    Human Resource Management © 2026
+</footer>

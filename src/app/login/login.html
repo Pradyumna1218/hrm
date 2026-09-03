@@ -1,0 +1,111 @@
+<div class="container w-50">
+
+    <h3 class="text-center text-success">
+        Log In
+    </h3>
+
+    <form
+        [formGroup]="userReactiveForm"
+        (ngSubmit)="onSubmitReactive()">
+
+        <!-- Username -->
+        <div class="mb-3">
+
+            <label class="form-label">
+                Username:
+            </label>
+
+            <input
+                type="text"
+                formControlName="username"
+                class="form-control">
+
+            <div
+                *ngIf="userReactiveForm.get('username')?.touched"
+                class="text-danger">
+
+                <p
+                    *ngIf="userReactiveForm.get('username')?.hasError('required')">
+                    Username is required.
+                </p>
+
+                <p
+                    *ngIf="userReactiveForm.get('username')?.hasError('minlength')">
+                    Username is invalid.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="mb-3">
+
+            <label class="form-label">
+                Password:
+            </label>
+
+            <input
+                type="password"
+                formControlName="password"
+                class="form-control">
+
+            <div
+                *ngIf="userReactiveForm.get('password')?.touched"
+                class="text-danger">
+
+                <p
+                    *ngIf="userReactiveForm.get('password')?.hasError('required')">
+                    Password is required.
+                </p>
+
+                <p
+                    *ngIf="userReactiveForm.get('password')?.hasError('minlength')">
+                    Password is invalid.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+
+            <label class="form-label">
+                Confirm Password:
+            </label>
+
+            <input
+                type="password"
+                formControlName="confirmPassword"
+                class="form-control">
+
+            <div
+                *ngIf="userReactiveForm.get('confirmPassword')?.touched"
+                class="text-danger">
+
+                <p
+                    *ngIf="
+                    userReactiveForm.get('confirmPassword')?.value !=
+                    userReactiveForm.get('password')?.value">
+                    Passwords do not match.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn btn-outline-success float-end">
+
+            Create Account
+
+        </button>
+
+    </form>
+
+</div>
