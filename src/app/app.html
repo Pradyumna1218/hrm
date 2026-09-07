@@ -1,33 +1,37 @@
-<h1 class="text-center">
-    Human Resource Management
-</h1>
+<div class="d-flex flex-column min-vh-100">
 
-<nav class="navbar navbar-expand bg-info p-2">
+    <h1 class="text-center">
+        Human Resource Management
+    </h1>
 
-    <div class="container">
+    <nav class="navbar navbar-expand bg-info p-2">
 
-        <a routerLink="/home/dashboard" class="nav-link text-white">
-            Dashboard
-        </a>
+        <div class="container">
 
-        <a routerLink="/contact" class="nav-link text-white">
-            Contact
-        </a>
+            <a routerLink="/home/dashboard" class="nav-link text-white">
+                Dashboard
+            </a>
 
-        <a routerLink="/login" class="nav-link text-white">
-            Log In
-        </a>
+            <a routerLink="/contact" class="nav-link text-white">
+                Contact
+            </a>
 
+            <a routerLink="/login" class="nav-link text-white">
+                Log In
+            </a>
+
+        </div>
+
+    </nav>
+
+    <br>
+
+    <div class="flex-grow-1">
+        <router-outlet></router-outlet>
     </div>
 
-</nav>
+    <footer class="container w-75 bg-secondary text-white text-center p-2 mt-5">
+        Human Resource Management © 2026
+    </footer>
 
-<br>
-
-<div class="mb-6">
-    <router-outlet></router-outlet>
 </div>
-
-<footer class="container w-75 bg-secondary text-white text-center p-2 mt-5">
-    Human Resource Management © 2026
-</footer>

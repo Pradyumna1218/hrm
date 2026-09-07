@@ -23,4 +23,8 @@ export class ApiService {
         const url = this.baseUrl + `/products/${productId}`
         return this.httpClient.get(url, {headers:this.headers })
     }
+
+    isContactAllowed(){
+        return 5 != 5
+    }
 }

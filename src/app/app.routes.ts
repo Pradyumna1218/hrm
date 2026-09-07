@@ -1,8 +1,5 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
-import { About } from './about/about';
-import { Contact } from './contact/contact';
-import { Login } from './login/login';
+import { authGuard, contactGuard } from './guards/common-guard';
 
 export const routes: Routes = [
     // {
@@ -25,10 +22,16 @@ export const routes: Routes = [
     },
     {
         path: 'contact',
-        component: Contact
+        loadComponent: () => import('./contact/contact').then(m => m.Contact),
+        canActivate: [authGuard, contactGuard]
     },
     {
         path: 'login',
-        component: Login
+        loadComponent: () => import('./login/login').then(m => m.Login),
+    },
+    {
+        path: 'denied',
+        loadComponent: () => import('./denied/denied').then(m=>m.Denied)
     }
+    
 ];
