@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   imports: [RouterOutlet, FormsModule, CommonModule, ReactiveFormsModule],
@@ -10,5 +10,7 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './home.html',
 })
 export class Home {
-  
+ constructor(private router: Router){
+  console.log(this.router)
+ }
 }

@@ -32,6 +32,10 @@ export const routes: Routes = [
     {
         path: 'denied',
         loadComponent: () => import('./denied/denied').then(m=>m.Denied)
+    },
+    {
+        path: 'state',
+        loadComponent: () => import('./state-management/state-management').then(m=>m.StateManagement)
     }
     
 ];
